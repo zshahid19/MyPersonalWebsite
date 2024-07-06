@@ -6,17 +6,43 @@ const Header = () => {
             <div className="svg-container">
                 <div className="shape-container OrangeHeader">
                     <img src="/Shapes/OrangeHeader.svg" alt="OrangeHeader" className="HeaderShape" />
-                    <p className="orange-text">Zaid Shahid <br></br> Software Engineer</p>
+                    <div className="shape-container OrangeHeader">
+                    <a href="#home" className="orange-text">
+                        Zaid Shahid<br />Software Engineer
+                    </a>
+                    </div>
                 </div>
                 <div className="shape-container BlueHeader">
                     <img src="/Shapes/BlueHeader.svg" alt="BlueHeader" className="HeaderShape" />
-                    <p className='blue-text'>My Resume</p>
-                    <p className='blue-text-icons'>My Resume</p>
+                    <a href="#resume" className="blue-text header-text">My Resume</a>
+
+
+                    <div className="blue-text-icons">
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <img src='/Shapes/Linkedin.svg' alt="linkedin icon" className='blue-text-logos' />
+                        </a>
+                        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+                            <img src='/Shapes/Github.svg' alt="github icon" className='blue-text-logos' />
+                        </a>
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                            <img src='/Shapes/Vector.svg' alt="vector icon" className='blue-text-logos' />
+                        </a>
+                    </div>
                 </div>
                 <div className="shape-container PinkHeader">
-                    <img src="/Shapes/PinkHeader.svg" alt="PinkHeader" className="HeaderShape" />
+                <img src="/Shapes/PinkHeader.svg" alt="PinkHeader" className="HeaderShape" />
+                <div className='pink-text'>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#art">Art</a>
+                    <a href="#cooking">Cooking</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
+            </div>
+            <div className= "vantaContainer"></div>
+
         </header>
     );
 };

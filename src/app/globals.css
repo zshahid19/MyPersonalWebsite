@@ -14,21 +14,24 @@
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  box-sizing: inherit;
+   outline: 1px solid #f00 !important;
 }
+.slide-content .scroller {
+  width: 1024px;
+}
+
 
 html,
 body {
   font-family: 'Lexend', sans-serif; /* Apply the custom font here */
-
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Lexend', sans-serif; /* Apply the custom font here */
-
-}
 
 
 
@@ -43,8 +46,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensures text stays within the box */
-  color: white;
+  color: var(--white-color);
   text-align: center;
 }
 
@@ -62,7 +64,6 @@ body {
   max-width: 100%; /* Ensure text does not overflow horizontally */
   overflow-wrap: break-word; /* Ensure long words break to the next line */
   font-family: 'Lexend', sans-serif; /* Apply the custom font here */
-
 }
 
 .svg-container {
@@ -73,81 +74,109 @@ body {
 
 /* Adjust the positioning of each shape */
 .OrangeHeader {
-  /* Header Rectangle */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 10px;
-isolation: isolate;
-
-position: absolute;
-width: 45.115vw;
-height: 18.6vh;
-left: 1.302vw;
-top: 2.8vh;
-
-.orange-text {
-/* Zaid Shahid Software Developer */
-font-family: 'Lexend', sans-serif; /* Apply the custom font here */
-text-align: left;
-position: absolute;
-width: 31.823vw;
-height: 7.8vh;
-left: 1vm;
-top: 1vh;
-
-font-style: normal;
-font-weight: 400;
-font-size: 3.5em;
-line-height: 1.15em;
-
-color: var(--white-color);
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-z-index: 1;
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 1vh;
+  isolation: isolate;
+  position: absolute;
+  width: 45.115vw;
+  height: 18.6vh;
+  left: 1.302vw;
+  top: 2.8vh;
 }
 
+.orange-text {
+  font-family: 'Lexend', sans-serif; /* Apply the custom font here */
+  text-align: left;
+  margin: 0;
+  position: absolute;
+  left: -1vw; 
+  top: -1.4vh; 
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.0rem, 3vw, 4rem); /* Dynamic font size */
+  line-height: 1.30em;
+  color: var(--white-color);
+  z-index: 1;
+  text-decoration: none;
+}
+
+.orange-text::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: var(--white-color); /* Use the same color as the text */
+  left: 0;
+  bottom: 0.5vh;
+  transition: width 0.3s ease;
+}
+
+.orange-text:hover::after {
+  width: 100%;
 }
 
 .BlueHeader {
-/* Blue Rectangle */
-
-position: absolute;
-width: 50.167vw;
-height: 19.3vh;
-left: 49.917vw;
-top: 12.7vh;
-
-.blue-text{
-  /* My Resume */
-text-decoration: underline;
-text-underline-offset: 1vh;
-text-decoration-thickness: 3.4px;
-position: absolute;
-text-align: left;
-width: 16.927vw;
-height: 5.3vh;
-left: 3.5vw;
-top: 1vh;
-
-font-style: normal;
-font-weight: 300;
-font-size: 2.5em;
-line-height: 1.20em;
-
-color: #FFFFFF;
-
-
+  position: absolute;
+  width: 48.167vw;
+  height: 19.3vh;
+  left: 49.917vw;
+  top: 12.7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 1vh;
+  isolation: isolate;
 }
 
+.blue-text {
+  text-align: left;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.0rem, 2.2vw, 3rem); /* Dynamic font size */
+  line-height: 1.20em;
+  color: var(--white-color);
+  position: relative;
+  z-index: 1;
+  margin-left: 8.3% !important; /* Adjust as needed */
+  margin-top: -1% !important; /* Adjust as needed */
+  text-decoration: none; /* Ensure no default underline */
+}
+
+.blue-text::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: var(--white-color); /* Use the same color as the text */
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.blue-text:hover::after {
+  width: 100%;
+}
+
+.blue-text-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  margin-left: 51.7%; /* Adjust as needed */
+  margin-top: 2%; /* Adjust as needed */
+  z-index: 1;
+}
+
+
+.blue-text-logos{
+  height: clamp(3vh, 6vw, 6.5vh); /* Dynamic icon size */
 }
 
 .PinkHeader {
@@ -162,19 +191,282 @@ top: 22.6vh;
 
 }
 
+.pink-text{
+  /* Navigation */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 3.5%;
+
+position: absolute;
+width: 53.125vw;
+height: 11.0vh;
+left: 3.7vw;
+top: 4.6vh;
+font-size: clamp(1.0rem, 2vw, 6rem);
+color: var(--white-color);
+
+}
+
+.pink-text a {
+  margin-right: 20px; /* Adjust the margin as needed */
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.pink-text a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: var(--white-color); /* Use the same color as the text */
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.pink-text a:hover::after {
+  width: 100%;
+}
+
 .header-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
   text-align: center;
 }
 
 
 
+.ImageRectangle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 99vw;
+  height: 60vh;
+  left: 0vw;
+  top: 41vh;
+  overflow: hidden; /* Ensures content does not overflow the container */
+  box-sizing: border-box;
+}
+
+.Blobs{
+  height: 175vh;
+  width: 100%;
+  
+}
+.IntroRectangleContainer{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: 60vh;
+  left: 34vw;
+  top: 50vh;
+
+}
+
+.IntroRectangleText{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  top: 5vh;
+  width: 28vw;
+  height: 50vh;
+  font-size: 4.25vh;
+  text-align: center;
+  font-weight: 300;
+  line-height: 70px;
+  text-align: center;
+  padding: 10px; /* Optional: Add padding for better readability */
+  word-wrap: break-word; /* Ensure long words break and wrap to the next line */
+  word-break: break-word; /* Break words that exceed the container's width */
+  white-space: normal; /* Ensure text wraps to the next line */
+}
+
+.BlobBlobs{
+background-blend-mode: plus-darker;
+mix-blend-mode: hard-light;
+height: 210vh;
+}
+
+
+.AboutBlob{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  top: 40vh;
+  left: -2vw;
+  width: 40vw;
+  height: 65vh;
+  font-size: 4.25vh;
+  text-align: center;
+  font-weight: 300;
+  line-height: 70px;
+  text-align: center;
+}
+
+.ProjectsBlob{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  top: -4vh;
+  left: 27vw;
+  width: 40vw;
+  height: 65vh;
+  font-size: 4.25vh;
+  text-align: center;
+  font-weight: 300;
+  line-height: 70px;
+  text-align: center;
+}
+
+.ExpierenceBlobClass{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  top: -50vh;
+  left: 64vw;
+  width: 33vw;
+  height: 67vh;
+  font-size: 4.25vh;
+  text-align: center;
+  font-weight: 300;
+  line-height: 70px;
+  text-align: center;
+}
+
+.ArtBlobClass{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  top: -65vh;
+  left: 0vw;
+  width: 40vw;
+  height: 65vh;
+  font-size: 4.25vh;
+  text-align: center;
+  font-weight: 300;
+  line-height: 70px;
+  text-align: center;
+}
+
+.CookingBlobClass{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  top: -125vh;
+  left:45vw;
+  width: 40vw;
+  height: 65vh;
+  font-size: 4.25vh;
+  text-align: center;
+  font-weight: 300;
+  line-height: 70px;
+  text-align: center;
+}
+
+.BlobText {
+  position: relative;
+  font-size: clamp(1.0rem, 2vw, 6rem);
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.BlobText a {
+  color: var(--white-color); 
+  text-decoration: none; 
+  position: relative;
+}
+
+.BlobText a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; 
+  background-color: var(--white-color); 
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.BlobText a:hover::after {
+  width: 100%;
+}
+
+.AboutText{
+  position: relative;
+  width: 6%;
+  top: -44vh;
+  left: 14.5vw;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ProjectsText{
+  position: relative;
+  width: 8%;
+  top: -33vh;
+  left: 44.5vw;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ExperienceText{
+  position: relative;
+  width: 6%;
+  top: -17vh;
+  left: 75.5vw;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ArttText{
+  position: relative;
+  width: 6%;
+  top: 29vh;
+  left: 19.5vw;
+  text-decoration: none;
+  color: inherit;
+}
+
+.CookingText{
+  position: relative;
+  width: 6%;
+  top: 33vh;
+  left: 59.5vw;
+  text-decoration: none;
+  color: inherit;
+}
+
+.vantaContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    background-color: #f1CBAE;
   }
 }
