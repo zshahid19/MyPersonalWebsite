@@ -41,7 +41,6 @@ const Header = () => {
                 </div>
             </div>
             </div>
-            <div className= "vantaContainer"></div>
 
         </header>
     );

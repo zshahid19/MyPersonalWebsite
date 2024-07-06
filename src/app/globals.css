@@ -15,7 +15,6 @@
 
 * {
   box-sizing: inherit;
-   outline: 1px solid #f00 !important;
 }
 .slide-content .scroller {
   width: 1024px;
@@ -296,7 +295,7 @@ color: var(--white-color);
 .BlobBlobs{
 background-blend-mode: plus-darker;
 mix-blend-mode: hard-light;
-height: 210vh;
+height: 40vh;
 }
 
 
@@ -390,6 +389,7 @@ height: 210vh;
   font-size: clamp(1.0rem, 2vw, 6rem);
   color: var(--white-color);
   text-decoration: none;
+  height: 100vh;
 }
 
 .BlobText a {
@@ -458,12 +458,27 @@ height: 210vh;
   color: inherit;
 }
 
-.vantaContainer {
-  width: 100vw;
-  height: 100vh;
+/* page.module.css */
+
+.vantaWrapper {
   position: relative;
-  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Vanta container to fill the parent height */
+.vanta-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   html {
