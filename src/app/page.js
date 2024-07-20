@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "./ComponentPages/Header";
 import VantaBackground from "./ComponentPages/VantaBackground";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -76,7 +77,7 @@ export default function Home() {
         </div>
         <div className="BlobText">
           <div className="AboutText">
-            <a href="#About">About</a>
+            <Link href="/About">About</Link>
           </div>
           <div className="ProjectsText">
             <a href="#Projects">Projects</a>

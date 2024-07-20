@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
                 <div className="shape-container OrangeHeader">
                     <img src="/Shapes/OrangeHeader.svg" alt="OrangeHeader" className="HeaderShape" />
                     <div className="shape-container OrangeHeader">
-                    <a href="#home" className="orange-text">
+                    <a href="/" className="orange-text">
                         Zaid Shahid<br />Software Engineer
                     </a>
                     </div>
@@ -32,7 +33,7 @@ const Header = () => {
                 <div className="shape-container PinkHeader">
                 <img src="/Shapes/PinkHeader.svg" alt="PinkHeader" className="HeaderShape" />
                 <div className='pink-text'>
-                    <a href="#about">About</a>
+                    <Link href="/About">About</Link>
                     <a href="#projects">Projects</a>
                     <a href="#experience">Experience</a>
                     <a href="#art">Art</a>
